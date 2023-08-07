@@ -1,24 +1,6 @@
-#include <iostream>
-#include <stdlib.h>
-
-struct node {
-    int value;
-    node* next;
-};
-
-
+#include "header.h"
 
 int main() {
-    int size;
-    int number;
-    const std::string italic = "\033[3m";
-    const std::string reset = "\033[0m";
-    const std::string bold = "\033[1m";
-    const std::string underline = "\033[4m";
-    const std::string color_cyan = "\033[36m";
-    const std::string yellow = "\033[33m";
-
-    // Mensaje de bienvenida
 
     std::cout << R"(
                         ╭───────────────────────────────────────╮
@@ -39,7 +21,7 @@ int main() {
         array[i] = number * (i + 1);
     }
 
-    std::cout << " ╭";
+    std::cout << std::endl << std::endl << "                                          ╭";
     size_t board_length = sizeof("│") + std::to_string(number).length() +
                         sizeof("*") + std::to_string(size).length() +
                         sizeof("=") + std::to_string(array[number - 1]).length();
@@ -50,10 +32,11 @@ int main() {
     std::cout << "╮" << std::endl;
 
     for (int i = 0; i < size; i++) {
-        std::cout << " │ " << number << " * " << (i + 1) << " = " << array[i] << " │ " << std::endl;
+        std::cout << "                                          │ " << number << " * " << (i + 1) << " = " << array[i];
+        std::cout << " │" << std::endl; 
     }
 
-    std::cout << " ╰";
+    std::cout << "                                          ╰";
     for(int j = 0; j < board_length; j++) {
         std::cout << "─";
     }
