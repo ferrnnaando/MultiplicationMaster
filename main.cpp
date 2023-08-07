@@ -21,7 +21,7 @@ int main() {
         array[i] = number * (i + 1);
     }
 
-    std::cout << std::endl << std::endl << "                                          ╭";
+    std::cout << std::endl << "                                          ╭";
     size_t board_length = sizeof("│") + std::to_string(number).length() +
                         sizeof("*") + std::to_string(size).length() +
                         sizeof("=") + std::to_string(array[number - 1]).length();
@@ -32,8 +32,7 @@ int main() {
     std::cout << "╮" << std::endl;
 
     for (int i = 0; i < size; i++) {
-        std::cout << "                                          │ " << number << " * " << (i + 1) << " = " << array[i];
-        std::cout << " │" << std::endl; 
+        std::cout << "                                          │ " << number << " * " << (i + 1) << " = " << array[i] << " │ " << std::endl;
     }
 
     std::cout << "                                          ╰";
