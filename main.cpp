@@ -1,4 +1,5 @@
 #include "header.h"
+#include <iomanip>
 
 int main() {
 
@@ -21,27 +22,32 @@ int main() {
         array[i] = number * (i + 1);
     }
 
-    std::cout << std::endl << "                                          ╭";
-    size_t board_length = sizeof("│") + std::to_string(number).length() +
-                        sizeof("*") + std::to_string(size).length() +
-                        sizeof("=") + std::to_string(array[number - 1]).length();
+    int numWidth = std::to_string(number).length();
+    int sizeWidth = std::to_string(size).length();
+    int resultWidth = std::to_string(array[size - 1]).length();
 
-    for(int j = 0; j < board_length; j++) {
-             std::cout << "─";
-        }
-    std::cout << "╮" << std::endl;
-
-    for (int i = 0; i < size; i++) {
-        std::cout << "                                          │ " << number << " * " << (i + 1) << " = " << array[i] << " │ " << std::endl;
+    std::cout << std::endl;
+    std::cout << "                                    ╭";
+    for (int j = 0; j < numWidth + sizeWidth + resultWidth + 8; j++) {
+        std::cout << "─";
     }
 
-    std::cout << "                                          ╰";
-    for(int j = 0; j < board_length; j++) {
+    std::cout << "╮" << std::endl;
+    std::cout << "                                maked by @ferrnnaando " << std::endl;
+
+    for (int i = 0; i < size; i++) {
+        std::cout << "                                    │ ";
+        std::cout << std::setw(numWidth) << number << " * " << std::setw(sizeWidth) << (i + 1) << " = ";
+        std::cout << std::setw(resultWidth) << array[i] << " │" << std::endl;
+    }
+
+    std::cout << "                                    ╰";
+    for (int j = 0; j < numWidth + sizeWidth + resultWidth + 8; j++) {
         std::cout << "─";
     }
     std::cout << "╯" << std::endl << std::endl;
 
     delete[] array;
-  
+
     return 0;
 }
