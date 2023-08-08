@@ -39,6 +39,11 @@ Multiplication Table for 5:
 5 * 9 = 45
 5 * 10 = 50
 ```
+
+## Overview
+
+![image](https://github.com/ferrnnaando/MultiplicationMaster/assets/77246868/7d48d0a9-c00a-4057-8785-b288c905f2cc)
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request.
